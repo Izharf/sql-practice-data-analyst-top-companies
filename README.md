@@ -8,6 +8,6 @@ Solving 5 SQL interview questions daily from real company patterns (PwC, Deloitt
 | # | Question | Topic | Status |
 |---|-----------|--------|--------|
 | 1 | Second Highest Salary | Subquery / Aggregation | ✅ Solved |
-| 2 | Find Duplicate Records | Group By / Having | 🔜 Pending |
-| 3 | Employees Earning More Than Manager | Self Join | 🔜 Pending |
+| 2 | Find Duplicate Records | Group By / Having |  ✅ Solved|
+| 3 | Employees Earning More Than Manager | Self Join | |
 
