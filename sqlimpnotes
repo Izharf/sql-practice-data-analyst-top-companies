@@ -1,0 +1,52 @@
+-- # Write your MySQL query statement below
+
+-- windows function can't use where having groupby becasue it execute after this so use from subquery
+
+-- DELETE t1
+-- FROM users t1
+-- WHERE EXISTS (
+--     SELECT 1
+--     FROM users t2
+--     WHERE t1.email = t2.email
+--       AND t1.id > t2.id
+-- );
+
+-- Frame Types
+-- 1️⃣ Running Total
+-- ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+-- 2️⃣ Moving Window (Last 3 rows)
+-- ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+-- 3️⃣ Full Partition
+-- ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+
+-- Frame Clause — The Real Advanced Part
+
+-- This is where 90% fail.
+
+-- If you write:
+
+-- SUM(salary) OVER (ORDER BY id)
+
+-- Most databases default to:
+
+-- RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+
+-- Important difference:
+
+-- ROWS
+
+-- Counts physical rows.
+
+-- RANGE
+
+-- Counts values logically.
+
+-- Example:
+
+-- If two rows have same salary:
+
+-- ROWS → treats them separately
+
+-- RANGE → treats equal values as same frame boundary
+
+-- In interviews → prefer ROWS to avoid confusion.
